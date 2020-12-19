@@ -1,14 +1,3 @@
-> 转自摸鱼哥哥：微信公众号“[Java仓库](javascript:void(0);)”
-
-# Java身份证号码合法性校验与解析
-
-**目录结构**
-
-![image-20201120223851799](images/image-20201120223851799.png)
-
-**工具类**
-
-```java
 package cn.asu.util;
 
 import java.text.ParseException;
@@ -653,60 +642,3 @@ public class IdcardUtils {
     }
 
 }
-```
-
-**运行**
-
-```java
-package cn.asu;
-
-import static cn.asu.util.IdcardUtils.*;
-
-public class IdMain {
-
-    public static void main(String[] args) {
-        String idCard = "3689232519900576666";
-        boolean b = validateCard(idCard);
-        String province = getProvinceByIdCard(idCard);
-        String city = getCitycodeByIdCard(idCard);
-        int year = getYearByIdCard(idCard);
-        int month = getMonthByIdCard(idCard);
-        int date = getDateByIdCard(idCard);
-        int age = getAgeByIdCard(idCard);
-        String gender = getGenderByIdCard(idCard);
-        System.out.println("身份证号：" + idCard);
-        System.out.println("是否合法：" + b);
-        System.out.println("省：" + province);
-        System.out.println("城市编码：" + city);
-        System.out.println("年：" + year);
-        System.out.println("月：" + month);
-        System.out.println("日：" + date);
-        System.out.println("年龄：" + age);
-        System.out.println("性别：" + gender);
-    }
-
-}
-```
-
-## 运行结果
-
-![image-20201219183405274](images/image-20201219183405274.png)
-
-## 出错
-
-代码报错，加入'commons-lang3'依赖
-
-> 解决[![返回主页](images/logo.gif)](https://www.cnblogs.com/kevin-lee123/)[Mysterioushh](https://www.cnblogs.com/kevin-lee123/)：https://www.cnblogs.com/kevin-lee123/p/9246666.html
-
-```xml
-<dependencies>
-    
-    <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-lang3</artifactId>
-        <version>3.10</version>
-    </dependency>
-    
-</dependencies>
-```
-
